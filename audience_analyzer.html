@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse des Audiences</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Analyse des Audiences</h1>
+        
+        <!-- Charger les fichiers -->
+        <div class="file-input">
+            <label for="historiqueFile">Fichier Historique :</label>
+            <input type="file" id="historiqueFile" accept=".xlsx" />
+        </div>
+        <div class="file-input">
+            <label for="audienceFile">Fichier Audience :</label>
+            <input type="file" id="audienceFile" accept=".xlsx" />
+        </div>
+       
+        <!-- Boutons pour les étapes -->
+        <button id="processAudienceButton" disabled>Traiter le fichier Audience</button>
+        <button id="findMatchesButton" disabled>Trouver les correspondances</button>
+        <button id="generatePreviewButton" disabled>Générer l'aperçu</button>
+        <button id="downloadButton" disabled>Télécharger le Fichier Mis à Jour</button>
+        
+        <!-- Indicateur de progression -->
+        <div id="progressBar">
+            <div class="progress"></div>
+        </div>
+
+        <!-- Sélecteur de feuille et conteneur pour l'aperçu -->
+        <div class="preview-controls">
+            <label for="sheetSelector">Sélectionnez une feuille :</label>
+            <select id="sheetSelector"></select>
+        </div>
+        <div id="previewContainer"></div>
+    </div>
+
+    <!-- Bibliothèque XLSX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <!-- Scripts JS -->
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>    
+</body>
+</html>
